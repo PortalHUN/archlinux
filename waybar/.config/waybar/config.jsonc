@@ -1,0 +1,74 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  //"output": "HDMI-A-1",
+  "height": 30, // Waybar height (to be removed for auto height)
+  "width": 1904, // Waybar width
+  "spacing": 4, // Gaps between modules (4px)
+  "margin-top": 8,
+  "margin-left": 8,
+  "margin-right": 8,
+  // Choose the order of the modules
+  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "network", "pulseaudio"],
+  //Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons":
+	{
+	  "1":"",
+	  "2":"󰆍",
+	  "10":""
+	}
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+    // "icons": {
+    //   "blueman": "bluetooth",
+    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    // }
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-ethernet": "",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  },
+  "custom/logo": {
+    "format": "\uf303",
+    "class": "logo"
+  }
+}
