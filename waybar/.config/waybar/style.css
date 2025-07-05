@@ -1,127 +1,105 @@
-/*
-Dark Gray: 3c3a3d
-Nero: 292929
-Charcoal: 444444
-*/
+@import "colors.css";
 
 * {
-  font-family: "SF Pro Text", "JetBrainsMono Nerd Font Propo", "Roboto",
-    Helvetica, Arial, sans-serif;
+  font-family: "SF Pro Text", "JetBrainsMono Nerd Font Propo", sans-serif;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 window#waybar {
-  background-color: rgba(255, 255, 255, 0);
-  transition-property: background-color;
-  transition-duration: 0.5s;
-}
-
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-button {
-  border: none;
-  border-radius: 0;
-}
-
-#pulseaudio:hover {
-  background-color: #a37800;
+  background-color: transparent;
 }
 
 #workspaces button {
-  margin: 0 2px;
-  padding: 0 5px;
-  background-color: transparent;
-  color: #ffffff;
+  margin: 0 2;
+  padding: 0 5;
+  border-radius: 10;
+  color: @secondary;
+  background-color: @secondary_container;
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-radius: 10px;
-  background-color: #292929;
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background-color: @tertiary_container;
+  color: @tertiary;
 }
 
 #workspaces button.active {
-  background-color: #444444;
+  background-color: @primary_container;
+  color: @primary;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
-}
-
-#mode {
-  background-color: #64727d;
+  background-color: @error_container;
+  color: @error;
 }
 
 #clock,
 #network,
 #pulseaudio,
+#custom-logo,
 #tray {
   padding: 0 10px;
-  color: #ffffff;
-}
-
-#window,
-#workspaces {
-  margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-/*.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}*/
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
+  color: @secondary;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: @secondary_container;
 }
 
 #clock {
-  background-color: #292929;
   border-radius: 10px;
 }
 
-label:focus {
-  background-color: #fff;
+#clock:hover{
+  background-color: @primary_container;
+  color: @primary;
 }
 
 #network {
-  background-color: #292929;
   border-radius: 10px;
+}
+
+#network:hover{
+  background-color: @primary_container;
+  color: @primary;
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: @error_container;
+  color: @error;
 }
 
 #pulseaudio {
-  background-color: #292929;
   border-radius: 10px;
+}
+
+#pulseaudio:hover{
+  background-color: @primary_container;
+  color: @primary;
 }
 
 #pulseaudio.muted {
-  background-color: #292929;
-  color: #fff;
+  background-color: @secondary_container;
+  color: @error;
 }
 
 #tray {
-  background-color: #292929;
   border-radius: 10px;
 }
 
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+#tray:hover{
+  background-color: @primary_container;
+  color: @primary;
 }
 
 #custom-logo {
   font-weight: bold;
-  color: white;
   padding: 0 8px;
-  background: #292929;
   border-radius: 10px;
+}
+
+#custom-logo:hover {
+  background-color: @primary_container;
+  color: @primary;
 }
