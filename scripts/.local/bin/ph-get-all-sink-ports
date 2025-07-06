@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pactl list sinks | awk '
+  /^Sink #/ { sink_block = 1; }
+  sink_block && /^Name: / { sink_name = $2; }
+  sink_block && /Ports:/ { ports = 1; next }
+  sink_block && ports && /Active Port/ { ports = 0; sink_block = 0 }
+  sink_block && ports && /^[ \t]+[a-zA-Z0-9\-_.]+:/ {
+    match($0, /^[ \t]*([a-zA-Z0-9\-_.]+):[ \t]*([^()]+) */, m)
+    if (length(m[1]) > 0)
+      print sink_name m[1]
+  }
+'

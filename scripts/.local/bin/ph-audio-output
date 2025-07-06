@@ -1,0 +1,12 @@
+
+#!/bin/bash
+
+selected_port=$(ph-get-all-sink-ports | rofi -dmenu -p "Audio devices")
+
+if [[ -n "$selected_port" ]]; then
+  echo "Setting sink to port '$selected_port'"
+  pactl set-sink-port 0 "$selected_port"
+else
+  echo "No valid selection made or port not found."
+fi
+
