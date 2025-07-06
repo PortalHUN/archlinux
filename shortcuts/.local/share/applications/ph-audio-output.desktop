@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Exec=sh /home/portal/.local/bin/ph-audio-output
+Name=Audio Switcher
+GenericName=Audio Switcher
+Type=Application
+Categories=Application;Audio;
