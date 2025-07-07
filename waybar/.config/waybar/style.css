@@ -15,13 +15,13 @@ window#waybar {
   padding: 0 5;
   border-radius: 10;
   color: @secondary;
-  background-color: @secondary_container;
+  background-color: @surface;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
 #workspaces button:hover {
-  background-color: @tertiary_container;
+  background-color: @on_surface;
   color: @tertiary;
 }
 
@@ -44,7 +44,7 @@ window#waybar {
   color: @secondary;
   transition-property: background-color;
   transition-duration: 0.5s;
-  background-color: @secondary_container;
+  background-color: @surface;
 }
 
 #clock {
@@ -80,7 +80,7 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  background-color: @secondary_container;
+  background-color: @surface;
   color: @error;
 }
 

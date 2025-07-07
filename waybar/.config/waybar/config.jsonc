@@ -36,7 +36,8 @@
   },
   "clock": {
     // "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format":"{:%H:%M}",
+    "format-alt":"{:%Y.%m.%d %H:%M}"
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -53,7 +54,7 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "ph-audio-output"
   },
   "custom/media": {
     "format": "{icon} {text}",

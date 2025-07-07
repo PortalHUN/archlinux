@@ -1,0 +1,18 @@
+@import "colors.rasi"
+
+* {
+  bg0: @surface;
+  bg1: @primary-container;
+  bg2: @secondary-container;
+  bg3: @tertiary-container;
+  fg0: @primary;
+  fg1: @secondary;
+  fg2: @tertiary;
+  fg3: @tertiary;
+}
+
+@import "template/rounded-template.rasi"
+
+element selected {
+  text-color: @fg0;
+}
