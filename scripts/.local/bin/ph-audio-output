@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-selected_port=$(~/.local/bin/ph-get-all-sink-ports | rofi -dmenu -p "Audio devices")
+selected_port=$(~/.local/bin/ph-get-all-sink-ports | rofi -dmenu -theme gruvbox-light -p "Audio devices")
 
 if [[ -n "$selected_port" ]]; then
   echo "Setting sink to port '$selected_port'"
