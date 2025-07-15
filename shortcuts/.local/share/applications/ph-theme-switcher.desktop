@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Exec=python3 /home/portal/.local/bin/ph-theme-switcher.py
+Name=Theme Switcher
+GenericName=Theme Switcher
+Type=Application
+Categories=Application;Desktop;
+Icon=org.gnome.Settings
