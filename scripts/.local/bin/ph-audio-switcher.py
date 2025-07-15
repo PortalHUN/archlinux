@@ -28,7 +28,7 @@ def input_string():
   return "\n".join(Titles).encode("utf-8")
 
 def launch_rofi():
-  return subprocess.run(["rofi", "-dmenu", "-p", ROFI_TITLE], input=input_string(), capture_output=True)
+  return subprocess.run(["rofi", "-i", "-dmenu", "-p", ROFI_TITLE], input=input_string(), capture_output=True)
 
 #return subprocess.run(["rofi", "-dmenu", "-theme", ROFI_THEME, "-p", ROFI_TITLE], input=input_string(), capture_output=True)
 
